@@ -56,7 +56,7 @@ During exploring the data, it was found out that around 6,000 rows of messages d
 **Clone repository** 
 
 ```
-git clone 
+git clone https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project.git
 ```
 
 **Execution** 
@@ -91,8 +91,8 @@ models folder contains the following:
 
 **Additional Materials**
 
-- [ETL Pipeline Preparation.ipynb] : This notebook provides insights into the initial thought process behind the ETL (Extract, Transform, Load) part of the project, along with the experimentation of different procedures. The final output of this notebook is utilized to create the process_data.py file.
-- [ML Pipeline Preparation.ipynb] : This notebook explains why specific machine learning algorithms were chosen and how they were incorporated into the model pipeline. It represents the initial thought process for building the model pipeline. The final outcome of this notebook serves as the foundation for creating the train_classifier.py file.
+- [ETL Pipeline Preparation.ipynb](https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/notebook/ETL%20Pipeline%20Preparation.ipynb): This notebook provides insights into the initial thought process behind the ETL (Extract, Transform, Load) part of the project, along with the experimentation of different procedures. The final output of this notebook is utilized to create the process_data.py file.  
+- [ML Pipeline Preparation.ipynb](https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/notebook/ML%20Pipeline%20Preparation.ipynb): This notebook explains why specific machine learning algorithms were chosen and how they were incorporated into the model pipeline. It represents the initial thought process for building the model pipeline. The final outcome of this notebook serves as the foundation for creating the train_classifier.py file.
 
 For a detailed explanation of the thought process and approach used, please refer to the markdown cells. 
 
