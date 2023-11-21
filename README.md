@@ -3,7 +3,7 @@
 
 ## Overview
 
-This project is an integral part of the Data Science Nanodegree Program provided by Udacity in collaboration with Figure Eight. The dataset includes pre-labeled tweets and messages (~26K) collected from real disaster events. The main goal of this project is to create a Natural Language Processing (NLP) model capable of classifying messages and swiftly identifying post-disaster requirements in real-time scenarios.
+This project is an integral part of the Data Engineering course provided by Udacity in collaboration with Figure Eight. The dataset includes pre-labeled tweets and messages (~26K) collected from real disaster events. The main goal of this project is to create a Natural Language Processing (NLP) model capable of classifying messages and swiftly identifying post-disaster requirements in real-time scenarios.
 
 **Project Components**:  
 
