@@ -1,5 +1,5 @@
 
-# Disaster Response Pipeline Project
+# Disaster Response Pipeline Project (work in progress)
 
 ## Overview
 
@@ -29,14 +29,14 @@ Flask Web App: *run.py*, executes the disaster response app :
 
 In this project, a diverse set of classifiers, including RandomForest, GradientBoost, LinearSVC, and Logistic Regression, were utilized to determine the most suitable model for disaster message classification. The models were fine-tuned through a grid search involving specific parameters, with a focus on promising candidates identified during the initial assessment. Model selection was guided by performance metrics and considerations regarding computational resource requirements for training.
 
-In disaster response scenarios characterized by imbalanced data, precision assumes a crucial role in guaranteeing predictions that optimize resource allocation. Equally pivotal is recall, as it ensures the identification of all genuine needs during critical situations. The F1 score, serving as a balanced metric that harmonizes precision and recall, proves especially pertinent when false positives and false negatives bear comparable consequences.
+The disaster dataset exhibits a significant class imbalance, with some categories having a very small occurrence rate (< 10% or < 5%). When working with imbalanced data, it is crucial to use appropriate metrics for model evaluation. Precision is essential for ensuring accurate predictions, optimizing resource allocation in disaster response scenarios. Recall is equally important as it ensures the identification of all genuine needs during critical situations. The F1 score, a balanced metric that combines precision and recall, becomes particularly relevant when false positives and false negatives have similar consequences.
 
 Simplifying the evaluation process, the focus was on assessing models using the F1 score for the positive label. This approach offered a straightforward gauge of each model's effectiveness. The evaluation prioritized models with a greater number of F1 scores surpassing the 0.5 threshold, denoting above-average performance and facilitating the selection of the most efficient models.
 
 
 **Note**:
 
-During exploring the data, it was found out that around 6,000 rows of messages didn't have labels.  These messages turned out to be not related to disasters, according to the source: https://github.com/rmunro/disaster_response_messages. So, only ~ 20K records that do have labels was utilized for the model training. 
+While exploring the data, it was discovered that approximately 6,000 rows of messages were unrelated to disasters, as confirmed by the source at https://github.com/rmunro/disaster_response_messages. Additionally, there were around 5,000 messages directly related to disasters but lacking category labels.
 
 
 **Jupyter Notebooks**
