@@ -87,11 +87,13 @@ app folder contains the following HTML `templates`:
   - `index.html`: Renders homepage  
   - `go.html`: Renders the message classifier  
   - `../app/run.py` is the script to execute the app  
+
 data folder contains the following:  
   - `disaster_categories.csv`: disaster categories csv file  
   - `disaster_messages.csv`: disaster messages csv file  
   - `DisasterResponse.db`: database which is a merge of categories and messages  
   - `../data/process_data.py`: is the script for data cleaning  
+
 models folder contains the following:  
   - `classifier.pkl`: RandomForestClassifier pickle file  
   - `train_classifier.py`: is script for model training  
