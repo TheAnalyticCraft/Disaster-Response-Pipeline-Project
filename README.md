@@ -39,7 +39,15 @@ Simplifying the evaluation process, the focus was on assessing models using the 
 During exploring the data, it was found out that around 6,000 rows of messages didn't have labels.  These messages turned out to be not related to disasters, according to the source: https://github.com/rmunro/disaster_response_messages. So, only ~ 20K records that do have labels was utilized for the model training. 
 
 
-## Getting Started
+**Jupyter Notebooks**
+
+- [ETL Pipeline Preparation.ipynb](https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/notebook/ETL%20Pipeline%20Preparation.ipynb): This notebook provides insights into the initial thought process behind the ETL (Extract, Transform, Load) part of the project, along with the experimentation of different procedures. The final output of this notebook is utilized to create the process_data.py file.  
+- [ML Pipeline Preparation.ipynb](https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/notebook/ML%20Pipeline%20Preparation.ipynb): This notebook explains why specific machine learning algorithms were chosen and how they were incorporated into the model pipeline. It represents the initial thought process for building the model pipeline. The final outcome of this notebook serves as the foundation for creating the train_classifier.py file.
+
+For a detailed explanation of the thought process and approach used, please refer to the markdown cells. 
+
+
+## Deployment
 
 **Dependencies** 
 
@@ -76,29 +84,20 @@ git clone https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project
 **File Structure** 
 
 app folder contains the following HTML `templates`:  
-  - `index.html`: Renders homepage
+  - `index.html`: Renders homepage  
   - `go.html`: Renders the message classifier  
   - `../app/run.py` is the script to execute the app  
 data folder contains the following:  
-  - `disaster_categories.csv`: disaster categories csv file
-  - `disaster_messages.csv`: disaster messages csv file
-  - `DisasterResponse.db`: database which is a merge of categories and messages 
-  - `../data/process_data.py`: is the script for data cleaning
+  - `disaster_categories.csv`: disaster categories csv file  
+  - `disaster_messages.csv`: disaster messages csv file  
+  - `DisasterResponse.db`: database which is a merge of categories and messages  
+  - `../data/process_data.py`: is the script for data cleaning  
 models folder contains the following:  
-  - `classifier.pkl`: RandomForestClassifier pickle file
-  - `train_classifier.py`: is script for model training
-
-
-**Additional Materials**
-
-- [ETL Pipeline Preparation.ipynb](https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/notebook/ETL%20Pipeline%20Preparation.ipynb): This notebook provides insights into the initial thought process behind the ETL (Extract, Transform, Load) part of the project, along with the experimentation of different procedures. The final output of this notebook is utilized to create the process_data.py file.  
-- [ML Pipeline Preparation.ipynb](https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/notebook/ML%20Pipeline%20Preparation.ipynb): This notebook explains why specific machine learning algorithms were chosen and how they were incorporated into the model pipeline. It represents the initial thought process for building the model pipeline. The final outcome of this notebook serves as the foundation for creating the train_classifier.py file.
-
-For a detailed explanation of the thought process and approach used, please refer to the markdown cells. 
+  - `classifier.pkl`: RandomForestClassifier pickle file  
+  - `train_classifier.py`: is script for model training  
 
 
 ## Screenshots:
-
 
 <p align="center">
   <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/overview_screenshot.png" width="750" title="title">
@@ -109,13 +108,11 @@ For a detailed explanation of the thought process and approach used, please refe
 </p>
 
 
-
-
 ## Model Results  
 
-Note that the F1 scores for first 17 categories are above average, as shown below.
+The final model was selected through a grid search on a Random Forest classifier. Here are the F1 scores for 31 categories, with F1 scores above average for the top 17 categories, as shown below.  
 
-        feature                 precision   recall   f1_score   support   accuracy  
+        category                precision   recall   f1_score   support   accuracy  
     27  earthquake              0.865     0.767    0.813      765       0.955  
     23  weather_related         0.845     0.692    0.761      2219      0.840  
     8   food                    0.694     0.810    0.748      878       0.920  
