@@ -97,6 +97,11 @@ models folder contains the following:
 For a detailed explanation of the thought process and approach used, please refer to the markdown cells. 
 
 
+## Screenshots:
+
+<p align="center">
+  <img src="" width="750" title="title">
+</p>
 
 
 
