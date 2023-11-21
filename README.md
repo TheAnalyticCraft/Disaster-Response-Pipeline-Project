@@ -70,7 +70,7 @@ git clone https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project
 
 - Run the following command in the app's directory to run your web app. `python run.py`
 
-- Go to http://0.0.0.0:3001/
+- Go to http://127.0.0.1:5000/
 
 
 **File Structure** 
