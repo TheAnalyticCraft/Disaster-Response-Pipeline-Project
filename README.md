@@ -18,7 +18,7 @@ ML Pipeline: *train_classifier.py*, serves as machine learning pipeline that:
     - Loads the saved data from the SQLite database  
     - Splits the dataset into training and test sets  
     - Builds a text processing and machine learning pipeline  
-    - Trains various classifiers and fine-tunes them using GridSearchCV.
+    - Trains various classifiers and fine-tunes them using GridSearchCV  
     - Validates model results on the test set  
     - Exports the final model as a pickle file  
   
