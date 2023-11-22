@@ -36,7 +36,7 @@ Simplifying the evaluation process, the focus was on assessing models using the 
 
 **Note**:
 
-While exploring the data, it was discovered that approximately 6,000 rows of messages were unrelated to disasters, as confirmed by the source at https://github.com/rmunro/disaster_response_messages. Additionally, there were around 5,000 messages directly related to disasters but lacking category labels.
+During the data exploration phase, it became evident that approximately 6,000 rows of messages were unrelated to disasters, as confirmed by the source at https://github.com/rmunro/disaster_response_messages. Additionally, approximately 5,000 messages directly related to disasters lacked category labels. Consequently, only 20,000 disaster-related data points were included for model training. It's noteworthy that during this process, two columns, 'child_alone' and 'related,' were excluded from the dataset.
 
 
 **Jupyter Notebooks**
@@ -76,9 +76,8 @@ git clone https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project
     - To run ML pipeline that trains classifier and saves  
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
-- Run the following command in the app's directory to run your web app. `python run.py`
-
-- Go to http://127.0.0.1:5000/
+- Run the following command in the app's directory to run your web app. `python run.py`  
+This will start the web app and will direct you to a URL (http://127.0.0.1:5000/) where you can enter messages and get classification results for it.
 
 
 **File Structure** 
