@@ -26,6 +26,7 @@ from sqlalchemy import create_engine
 import pandas as pd
 import numpy as np
 
+
 app = Flask(__name__)
 
 def tokenize(text):
@@ -82,6 +83,8 @@ df = df[df['no_label'] != 1]
 # Remove non-essential columns
 df_drop = df.drop(['child_alone', 'related', 'no_label'],axis=1)
 df = df.drop(['related', 'no_label'],axis=1)
+df['n_labels'] = df.iloc[:,4:].sum(axis=1)
+
 
 # --------------------------------------------------------------------------------------------------------------------#
 
@@ -120,16 +123,6 @@ category_mean.sort_values(by=['category_class', 'mean_response'], ascending=[Tru
 
 # Summarize Data - Second Chart (Number of Classifications)
 
-df['src_request'] = df['request'].apply(lambda x: 1 if x == 1 else 0)
-df['src_offer'] = df['offer'].apply(lambda x: 1 if x == 1 else 0)
-df['src_report'] = df['direct_report'].apply(lambda x: 1 if x == 1 else 0)
-df['src_aid'] = np.where(df[['aid_related','medical_help','medical_products','search_and_rescue','security','military','child_alone','water','food',
-                                           'shelter','clothing','money','missing_people','refugees','death','other_aid']].sum(axis=1) > 0, 1,0)
-df['src_infra'] = np.where(df[['infrastructure_related','transport','buildings','electricity','tools','hospitals','shops','aid_centers','other_infrastructure']].sum(axis=1) > 0, 1,0)
-df['src_weather'] = np.where(df[['weather_related','floods','storm','fire','earthquake','cold','other_weather']].sum(axis=1) > 0, 1,0)
-df['n_labels'] = df.iloc[:,4:].sum(axis=1)
-#df['n_group'] = np.where(df_source['n_labels'] < 2, '1 ', np.where(df_source['n_labels'] < 6, '2-5 ', np.where(df_source['n_labels'] < 11, '6-10 ', '11-34 ')))
-
 nmsg_groups  = df['n_labels'].sort_values().value_counts().reset_index()
 nmsg_groups.columns = ['group', 'nmsg']
 nmsg_groups.sort_values(by='nmsg', ascending=False, inplace=True)
@@ -145,6 +138,12 @@ model = joblib.load("../models/classifier.pkl")
 @app.route('/index')
 def index():
     
+    """
+    Index webpage that displays cool visuals and receives user input text for the model.
+    
+    Returns:
+        render_template: Flask template to render the webpage with plotly graphs.
+    """
 
     # Define a color map for the category classes
     bar_color = {
@@ -268,6 +267,7 @@ def index():
 # web page that handles user query and displays model results
 @app.route('/go')
 def go():
+    
     # save user input in query
     query = request.args.get('query', '') 
 
