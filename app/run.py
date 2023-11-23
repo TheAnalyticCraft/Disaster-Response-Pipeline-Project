@@ -10,13 +10,11 @@ import nltk
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger','stopwords'])
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-from nltk import pos_tag
 
 from flask import Flask
-from flask import render_template, request, jsonify
+from flask import render_template, request
 
 import plotly
 from plotly.graph_objs import Bar, Layout
@@ -24,7 +22,6 @@ from sklearn.externals import joblib
 from sqlalchemy import create_engine
 
 import pandas as pd
-import numpy as np
 
 
 app = Flask(__name__)

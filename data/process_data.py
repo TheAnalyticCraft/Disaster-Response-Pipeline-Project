@@ -3,10 +3,8 @@
 
 import sys
 import os
-import re 
 
 import pandas as pd
-import numpy as np
 
 from sqlalchemy import create_engine
 
@@ -113,8 +111,6 @@ def save_data(df, database_filepath):
             # Save the DataFrame to the database, replace if it already exists
             df.to_sql(table_name, engine, index=False, if_exists='replace')
             print('Dataset Saved:', table_name)
-
-
 
             return None
 

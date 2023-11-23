@@ -14,20 +14,17 @@ import numpy as np
 import nltk
 nltk.download(['punkt', 'wordnet', 'averaged_perceptron_tagger','stopwords'])
 
-from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.stem.porter import PorterStemmer
+from nltk.tokenize import word_tokenize
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.corpus import stopwords
 from nltk import pos_tag
 
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.pipeline import Pipeline
 from sklearn.multioutput import MultiOutputClassifier
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer, TfidfVectorizer
-from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
-from sklearn import multioutput
-from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV
-from sklearn.metrics import precision_recall_fscore_support, accuracy_score, classification_report
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score
 
 
 def load_data(database_filepath):
