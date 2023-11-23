@@ -30,9 +30,9 @@ Flask Web App: *run.py*, executes the disaster response app :
 
 In this project, a diverse set of classifiers, including RandomForest, GradientBoost, LinearSVC, and Logistic Regression, were utilized to determine the most suitable model for disaster message classification. The models were fine-tuned through a grid search involving specific parameters, with a focus on promising candidates identified during the initial assessment. Model selection was guided by performance metrics and considerations regarding computational resource requirements for training.
 
-The disaster dataset exhibits a significant class imbalance, with some categories having a very small occurrence rate (< 10% or < 5%). When working with imbalanced data, it is crucial to use appropriate metrics for model evaluation. Precision is essential for ensuring accurate predictions, optimizing resource allocation in disaster response scenarios. Recall is equally important as it ensures the identification of all genuine needs during critical situations. The F1 score, a balanced metric that combines precision and recall, becomes particularly relevant when false positives and false negatives have similar consequences.
+The disaster dataset exhibits a significant class imbalance, with some categories having a very small occurence rate (< 10% or < 5%). When working with imbalanced data, it is crucial to use appropriate metrics for model evaluation. Precision is essential for ensuring accurate predictions, optimizing resource allocation in disaster response scenarios. Recall is equally important as it ensures the identification of all genuine needs during critical situations. The F1 score, a balanced metric that combines precision and recall, becomes particularly relevant when false positives and false negatives have similar consequences.
 
-Simplifying the evaluation process, the focus was on assessing models using the F1 score for the positive label. This approach offered a straightforward gauge of each model's effectiveness. The evaluation prioritized models with a greater number of F1 scores surpassing the 0.5 threshold, denoting above-average performance and facilitating the selection of the most efficient models.  
+Simplifying the evaluation process, the focus was on assessing models using the F1 score for the minority label. This approach offered a straightforward gauge of each model's effectiveness. The evaluation prioritized models with a greater number of F1 scores surpassing the 0.5 threshold, denoting above-average performance and facilitating the selection of the most efficient models.  
 
 To mitigate the severity of class imbalance, a parameter called "class weight" was specified, resulting in improved model performance, especially in the case of Random Forest.
 
@@ -108,7 +108,7 @@ The final model, selected through grid search on a Random Forest classifier, ach
 In addition to assessing model performance, it's crucial to engage in discussions with disaster response teams to present the initial findings, including the model's strengths and limitations. These conversations should also focus on exploring the practical applications of the predictions in real-time scenarios and determining the best approach for operationalizing these predictions, with input and collaboration from the teams.  
 
 
-| category              | precision | recall | f1_score | support | accuracy |
+| index\category        | precision | recall | f1_score | support | accuracy |
 |-----------------------|-----------|--------|----------|---------|----------|
 | 30 earthquake         | 0.859     | 0.77   | 0.812    | 722     | 0.957    |
 | 26 weather_related    | 0.857     | 0.703  | 0.772    | 2149    | 0.852    |
@@ -144,16 +144,16 @@ In addition to assessing model performance, it's crucial to engage in discussion
 | 6 security            | 0.141     | 0.301  | 0.192    | 123     | 0.948    |
 | 1 offer               | 0.129     | 0.1    | 0.113    | 40      | 0.99     |
 | 23 shops              | 0         | 0      | 0        | 38      | 0.994    |
-
+|-----------------------|-----------|--------|----------|---------|----------|
 
 ## Screenshots:
 
 <p align="center">
-  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/overview_screenshot.png" width="750" title="title">
+  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20024336.png" width="750" title="title">
 </p>
 
 <p align="center">
-  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/disasterapp_screenshot.png" width="750" title="title">
+  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20024246.png" width="750" title="title">
 </p>
 
 ## Acknowledgements
