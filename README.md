@@ -130,7 +130,7 @@ This will start the web app and will direct you to a URL (http://127.0.0.1:5000/
 **File Structure**  
 
 <p align="left">
-  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20082437.png" height = "300" width="220" title="file_structure">
+  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20082437.png" height = "300" width="400" title="file_structure">
 </p>
 
 app folder contains the following HTML iinside `templates` folder:  
