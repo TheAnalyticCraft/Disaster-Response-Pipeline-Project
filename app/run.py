@@ -213,7 +213,7 @@ def index():
             dict(
                 xref='paper', x=0.4,  # Position the x based on the figure's width
                 yref='y', y=0.06,  # Position the y at the horizontal line's level
-                text='Threshold for Identifying Extreme Cases in Unbalanced Data',  # The text of the annotation
+                text='Severe Cases of Unbalanced Data',  # The text of the annotation
                 showarrow=True,
                 arrowhead=1,
                 ax=0,
