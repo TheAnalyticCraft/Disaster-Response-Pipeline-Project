@@ -122,16 +122,27 @@ def build_model():
     pipeline: Machine learning pipeline
     """
 
-    params = {'class_weight': 'balanced', 'max_depth': 7, 'n_estimators': 500, 'min_samples_split': 25}
-    classifier = RandomForestClassifier(**params)
+    classifier = RandomForestClassifier()
+    grid_params = {
+        'estimator__estimator__max_depth': [5],            
+        'estimator__estimator__n_estimators': [500],
+        'estimator__estimator__min_samples_split': [25],
+        'estimator__estimator__class_weight': [None, 'balanced'],
+        'vectorizer__max_features': [1000,3000],
+        'vectorizer__ngram_range': [(1, 2)],
+        'vectorizer__min_df': [6]
+    }    
 
     # Standard Pipeline
     pipeline = Pipeline([
-        ('vectorizer', TfidfVectorizer(tokenizer=tokenize, ngram_range=(1, 2), min_df=6)),
+        ('vectorizer', TfidfVectorizer(tokenizer=tokenize)),
         ('estimator', MultiOutputClassifier(classifier))
     ])
 
-    return pipeline
+    # Apply GridSearchCV if needed
+    grid_cv = GridSearchCV(pipeline, param_grid=grid_params, cv=3)  # Adjust cv as needed
+
+    return grid_cv
 
 
 def evaluate_model(model, X_test, y_test):
@@ -190,6 +201,8 @@ def save_model(model, model_filepath):
 
 
 def main():
+
+    " Approximatly 16 minutes to run GridSearch"
 
     if len(sys.argv) == 3:
         database_filepath, model_filepath = sys.argv[1:]
