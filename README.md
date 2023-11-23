@@ -127,20 +127,20 @@ git clone https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project
 This will start the web app and will direct you to a URL (http://127.0.0.1:5000/) where you can enter messages and get classification results for it.
 
 
-**File Structure** 
+**File Structure**  
 .  
 ├── app     
 │   ├── run.py                           
 │   └── templates   
-│       ├── go.html                      
-│       └── master.html                  
+│     ├── go.html                      
+│     └── master.html                  
 ├── data                   
 │   ├── disaster_categories.csv          
 │   ├── disaster_messages.csv            
 │   └── process_data.py                  
 ├── models  
-│   └── train_classifier.py              
-|   |__ classifier.pkl                   
+│   └── train_classifier.py  
+│   └── classifier.pkl  
 └── README.md  
 
 
