@@ -128,21 +128,6 @@ This will start the web app and will direct you to a URL (http://127.0.0.1:5000/
 
 
 **File Structure**  
-.  
-├── app     
-│   ├── run.py                           
-│   └── templates   
-│     ├── go.html                      
-│     └── master.html                  
-├── data                   
-│   ├── disaster_categories.csv          
-│   ├── disaster_messages.csv            
-│   └── process_data.py                  
-├── models  
-│   └── train_classifier.py  
-│   └── classifier.pkl  
-└── README.md  
-
 
 app folder contains the following HTML iinside `templates` folder:  
   - `master.html`: Renders homepage  
