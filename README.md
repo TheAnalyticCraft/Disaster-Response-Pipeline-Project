@@ -1,5 +1,5 @@
 
-# Disaster Response Pipeline Project (work in progress)
+# Disaster Response Pipeline Project 
 
 ## Overview
 
