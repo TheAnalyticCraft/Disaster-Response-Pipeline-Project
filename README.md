@@ -130,7 +130,7 @@ This will start the web app and will direct you to a URL (http://127.0.0.1:5000/
 **File Structure**  
 
 <p align="left">
-  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20082437.png" width="750" title="title">
+  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20082437.png" height = "300" width="220" title="file_structure">
 </p>
 
 app folder contains the following HTML iinside `templates` folder:  
@@ -152,11 +152,11 @@ models folder contains the following:
 ## Screenshots:
 
 <p align="center">
-  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20024336.png" width="750" title="title">
+  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20024336.png" width="750" title="charts">
 </p>
 
 <p align="center">
-  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20024246.png" width="750" title="title">
+  <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/Screenshot%202023-11-23%20024246.png" width="750" title="classify">
 </p>
 
 ## Acknowledgements
