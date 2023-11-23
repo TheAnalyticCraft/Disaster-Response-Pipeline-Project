@@ -144,7 +144,7 @@ In addition to assessing model performance, it's crucial to engage in discussion
 | 6 security            | 0.141     | 0.301  | 0.192    | 123     | 0.948    |
 | 1 offer               | 0.129     | 0.1    | 0.113    | 40      | 0.99     |
 | 23 shops              | 0         | 0      | 0        | 38      | 0.994    |
-|-----------------------|-----------|--------|----------|---------|----------|
+
 
 ## Screenshots:
 
