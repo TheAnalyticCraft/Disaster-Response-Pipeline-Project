@@ -32,7 +32,9 @@ In this project, a diverse set of classifiers, including RandomForest, GradientB
 
 The disaster dataset exhibits a significant class imbalance, with some categories having a very small occurrence rate (< 10% or < 5%). When working with imbalanced data, it is crucial to use appropriate metrics for model evaluation. Precision is essential for ensuring accurate predictions, optimizing resource allocation in disaster response scenarios. Recall is equally important as it ensures the identification of all genuine needs during critical situations. The F1 score, a balanced metric that combines precision and recall, becomes particularly relevant when false positives and false negatives have similar consequences.
 
-Simplifying the evaluation process, the focus was on assessing models using the F1 score for the positive label. This approach offered a straightforward gauge of each model's effectiveness. The evaluation prioritized models with a greater number of F1 scores surpassing the 0.5 threshold, denoting above-average performance and facilitating the selection of the most efficient models.
+Simplifying the evaluation process, the focus was on assessing models using the F1 score for the positive label. This approach offered a straightforward gauge of each model's effectiveness. The evaluation prioritized models with a greater number of F1 scores surpassing the 0.5 threshold, denoting above-average performance and facilitating the selection of the most efficient models.  
+
+To mitigate the severity of class imbalance, a parameter called "class weight" was specified, resulting in improved model performance, especially in the case of Random Forest.
 
 
 **Note**:
@@ -99,6 +101,51 @@ models folder contains the following:
   - `train_classifier.py`: is script for model training  
 
 
+## Model Results  
+
+The final model, selected through grid search on a Random Forest classifier, achieved above-average F1 scores for the top 16 out of 34 categories, indicating its effectiveness in classifying disaster-related messages. These results highlight the model's strong performance in identifying critical information within the dataset.  
+
+In addition to assessing model performance, it's crucial to engage in discussions with disaster response teams to present the initial findings, including the model's strengths and limitations. These conversations should also focus on exploring the practical applications of the predictions in real-time scenarios and determining the best approach for operationalizing these predictions, with input and collaboration from the teams.  
+
+
+| category              | precision | recall | f1_score | support | accuracy |
+|-----------------------|-----------|--------|----------|---------|----------|
+| 30 earthquake         | 0.859     | 0.77   | 0.812    | 722     | 0.957    |
+| 26 weather_related    | 0.857     | 0.703  | 0.772    | 2149    | 0.852    |
+| 9 food                | 0.743     | 0.797  | 0.769    | 896     | 0.929    |
+| 8 water               | 0.66      | 0.786  | 0.717    | 504     | 0.948    |
+| 28 storm              | 0.702     | 0.73   | 0.715    | 732     | 0.93     |
+| 2 aid_related         | 0.81      | 0.612  | 0.697    | 3237    | 0.714    |
+| 0 request             | 0.694     | 0.667  | 0.681    | 1347    | 0.86     |
+| 10 shelter            | 0.556     | 0.737  | 0.634    | 712     | 0.899    |
+| 33 direct_report      | 0.62      | 0.596  | 0.608    | 1549    | 0.802    |
+| 27 floods             | 0.495     | 0.702  | 0.581    | 625     | 0.895    |
+| 11 clothing           | 0.5       | 0.691  | 0.58     | 136     | 0.977    |
+| 15 death              | 0.515     | 0.613  | 0.56     | 388     | 0.938    |
+| 7 military            | 0.418     | 0.742  | 0.534    | 236     | 0.949    |
+| 3 medical_help        | 0.488     | 0.571  | 0.527    | 630     | 0.893    |
+| 31 cold               | 0.429     | 0.682  | 0.526    | 154     | 0.969    |
+| 19 buildings          | 0.425     | 0.676  | 0.521    | 404     | 0.917    |
+| 4 medical_products    | 0.354     | 0.652  | 0.459    | 397     | 0.899    |
+| 29 fire               | 0.481     | 0.432  | 0.455    | 88      | 0.985    |
+| 16 other_aid          | 0.366     | 0.526  | 0.432    | 1001    | 0.77     |
+| 12 money              | 0.316     | 0.59   | 0.411    | 161     | 0.955    |
+| 20 electricity        | 0.303     | 0.631  | 0.409    | 157     | 0.953    |
+| 14 refugees           | 0.291     | 0.591  | 0.39     | 254     | 0.922    |
+| 18 transport          | 0.307     | 0.478  | 0.374    | 339     | 0.91     |
+| 32 other_weather      | 0.271     | 0.542  | 0.361    | 419     | 0.867    |
+| 22 hospitals          | 0.286     | 0.4    | 0.333    | 85      | 0.977    |
+| 17 infrastructure_rel | 0.234     | 0.5    | 0.319    | 504     | 0.822    |
+| 5 search_and_rescue   | 0.236     | 0.399  | 0.296    | 208     | 0.935    |
+| 25 other_infrastruct  | 0.188     | 0.494  | 0.272    | 346     | 0.848    |
+| 13 missing_people     | 0.221     | 0.352  | 0.271    | 91      | 0.971    |
+| 24 aid_centers        | 0.16      | 0.372  | 0.224    | 86      | 0.963    |
+| 21 tools              | 0.389     | 0.146  | 0.212    | 48      | 0.991    |
+| 6 security            | 0.141     | 0.301  | 0.192    | 123     | 0.948    |
+| 1 offer               | 0.129     | 0.1    | 0.113    | 40      | 0.99     |
+| 23 shops              | 0         | 0      | 0        | 38      | 0.994    |
+
+
 ## Screenshots:
 
 <p align="center">
@@ -108,45 +155,6 @@ models folder contains the following:
 <p align="center">
   <img src="https://github.com/TheAnalyticCraft/Disaster-Response-Pipeline-Project/blob/main/image/disasterapp_screenshot.png" width="750" title="title">
 </p>
-
-
-## Model Results  
-
-The final model was selected through a grid search on a Random Forest classifier. Here are the F1 scores for 31 categories, with F1 scores above average for the top 17 categories, as shown below.  
-
-        category                precision   recall   f1_score   support   accuracy  
-    27  earthquake              0.865     0.767    0.813      765       0.955  
-    23  weather_related         0.845     0.692    0.761      2219      0.840  
-    8   food                    0.694     0.810    0.748      878       0.920  
-    1   aid_related             0.797     0.622    0.699      3284      0.708  
-    25  storm                   0.702     0.684    0.693      751       0.925  
-    7   water                   0.622     0.761    0.685      519       0.940  
-    0   request                 0.703     0.666    0.684      1361      0.861  
-    30  direct_report           0.623     0.615    0.619      1518      0.809  
-    9   shelter                 0.547     0.683    0.608      761       0.889  
-    24  floods                  0.538     0.658    0.592      637       0.904  
-    14  death                   0.522     0.610    0.563      346       0.946  
-    18  buildings               0.465     0.655    0.544      412       0.925  
-    6   military                0.427     0.736    0.541      239       0.950  
-    2   medical_help            0.475     0.604    0.532      594       0.895  
-    28  cold                    0.487     0.583    0.531      156       0.973  
-    10  clothing                0.425     0.658    0.517      117       0.976  
-    19  electricity             0.454     0.575    0.507      179       0.967  
-    3   medical_products        0.367     0.612    0.459      415       0.901  
-    26  fire                    0.559     0.367    0.443      90        0.986  
-    15  other_aid               0.386     0.483    0.430      1059      0.774  
-    13  refugees                0.340     0.527    0.414      275       0.932  
-    17  transport               0.328     0.452    0.380      354       0.913  
-    29  other_weather           0.293     0.527    0.376      419       0.879  
-    11  money                   0.307     0.456    0.367      180       0.953  
-    16  infrastructure_related  0.264     0.456    0.334      566       0.830  
-    20  hospitals               0.295     0.329    0.311      79        0.981  
-    22  other_infrastructure    0.221     0.426    0.291      387       0.867  
-    4   search_and_rescue       0.238     0.327    0.275      208       0.941  
-    21  aid_centers             0.244     0.187    0.212      107       0.975  
-    12  missing_people          0.185     0.207    0.195      82        0.977  
-    5   security                0.131     0.216    0.163      134       0.951  
-
 
 ## Acknowledgements
 
