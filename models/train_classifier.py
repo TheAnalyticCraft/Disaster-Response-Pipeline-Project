@@ -212,6 +212,7 @@ def main():
         pipeline = build_model()
         
         print('Training model...')
+        print('Note: training process takes ~16 mins to complete...', '\n')
         model = pipeline.fit(X_train, y_train)
         
         print('Evaluating model...','\n')
